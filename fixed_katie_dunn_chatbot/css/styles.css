@@ -145,11 +145,11 @@ header {
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     position: relative;
     z-index: 3;
 }
-/* Quick-Start Guide Section Styles */
+/* Updated Quick-Start Guide Section Styles to match TAM/SAM/SOM cards */
 .quick-start {
     padding: 60px 0;
     background-color: #f5f5f5;
@@ -169,32 +169,36 @@ header {
     color: var(--secondary-color);
 }
 
-.quick-start-steps {
+.quick-start-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.quick-start-step {
+.quick-start-card {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 25px;
     width: 100%;
-    max-width: 450px;
+    max-width: 350px;
     transition: transform 0.3s ease;
-    display: flex;
-    align-items: flex-start;
 }
 
-.quick-start-step:hover {
+.quick-start-card:hover {
     transform: translateY(-5px);
 }
 
-.quick-start-step-icon {
+.quick-start-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.quick-start-card-icon {
     width: 50px;
     height: 50px;
     background-color: var(--primary-color);
@@ -203,34 +207,28 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 20px;
-    flex-shrink: 0;
+    margin-right: 15px;
     font-size: 1.5rem;
 }
 
-.quick-start-step-content {
-    flex-grow: 1;
-}
-
-.quick-start-step-title {
-    font-size: 1.2rem;
+.quick-start-card-title {
+    font-size: 1.3rem;
     font-weight: bold;
-    margin-bottom: 10px;
     color: var(--secondary-color);
 }
 
-.quick-start-step-text {
+.quick-start-card-content {
     font-size: 1rem;
     line-height: 1.6;
 }
 
 @media (max-width: 992px) {
-    .quick-start-steps {
+    .quick-start-cards {
         flex-direction: column;
         align-items: center;
     }
     
-    .quick-start-step {
+    .quick-start-card {
         max-width: 100%;
     }
 }
