@@ -140,14 +140,85 @@ header {
 }
 
 /* Chat Interface Section */
+/* Optimized iframe implementation to prevent scrolling and cutoff */
+
+/* Replace the current chat-frame styles with these */
 .chat-section {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 3;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  border: 3px solid var(--primary-color);
+}
+
+.chat-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Direct iframe implementation without wrapper */
+.chat-container iframe {
+  width: 100% !important;
+  height: 600px !important; /* Increased height to avoid cutoff */
+  max-width: 700px !important;
+  border-radius: 4px !important;
+  border: none !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important; /* Prevent scrollbars */
+}
+
+/* Media queries for responsive iframe */
+@media (max-width: 992px) {
+  .chat-container iframe {
+    height: 650px !important; /* Taller on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-section {
+    padding: 15px;
+  }
+  
+  .chat-container iframe {
+    height: 700px !important; /* Even taller on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-container iframe {
+    height: 750px !important; /* Maximum height on small screens */
+  }
 }
 /* Updated Quick-Start Guide Section Styles to match TAM/SAM/SOM cards */
 .quick-start {
