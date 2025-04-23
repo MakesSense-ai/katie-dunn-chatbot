@@ -338,3 +338,111 @@ footer {
         height: 350px;
     }
 }
+/* Mobile Responsiveness Improvements */
+
+/* Fix for iframe chatbot getting cut off on mobile */
+@media (max-width: 768px) {
+  .chat-frame {
+    height: 450px; /* Slightly reduced height */
+    margin-bottom: 20px;
+  }
+  
+  .chat-frame iframe {
+    width: 100% !important;
+    height: 450px !important;
+    max-width: 100% !important;
+  }
+  
+  /* Ensure the chat container doesn't overflow */
+  .chat-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+  
+  /* Make chat section padding smaller on mobile */
+  .chat-section {
+    padding: 15px;
+  }
+}
+
+/* Fix for steps displaying vertically on mobile */
+@media (max-width: 768px) {
+  /* Make steps display horizontally on mobile */
+  .steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    padding-bottom: 10px; /* Space for scrollbar */
+  }
+  
+  .step {
+    margin: 0 5px;
+    min-width: 100px;
+    max-width: 120px;
+  }
+  
+  /* Make step text smaller on mobile */
+  .step-text {
+    font-size: 0.8rem;
+  }
+  
+  /* Alternative layout for very small screens */
+  @media (max-width: 480px) {
+    .steps {
+      justify-content: center;
+    }
+    
+    /* Create a compact horizontal layout */
+    .step {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0 3px;
+      min-width: auto;
+    }
+    
+    .step-number {
+      width: 30px;
+      height: 30px;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      margin-right: 5px;
+    }
+    
+    .step-text {
+      display: none; /* Hide text on very small screens, show only numbers */
+    }
+  }
+}
+
+/* Improve TAM/SAM/SOM and Quick-Start cards on mobile */
+@media (max-width: 768px) {
+  .market-cards, .quick-start-cards {
+    gap: 15px;
+  }
+  
+  .market-card, .quick-start-card {
+    padding: 15px;
+  }
+  
+  .market-card-header, .quick-start-card-header {
+    margin-bottom: 10px;
+  }
+  
+  .market-card-icon, .quick-start-card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .market-card-title, .quick-start-card-title {
+    font-size: 1.1rem;
+  }
+  
+  .market-card-content p, .quick-start-card-content p {
+    font-size: 0.9rem;
+  }
+}
