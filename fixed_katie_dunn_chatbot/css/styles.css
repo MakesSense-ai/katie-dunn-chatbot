@@ -338,111 +338,128 @@ footer {
         height: 350px;
     }
 }
-/* Mobile Responsiveness Improvements */
+/* Enhanced Mobile Fixes for Iframe and Step Numbers */
 
-/* Fix for iframe chatbot getting cut off on mobile */
-@media (max-width: 768px) {
+/* Fix for iframe inconsistency across different screen sizes */
+.chat-frame {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 0;
+  padding-bottom: 75%; /* Maintain aspect ratio */
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+.chat-frame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Specific adjustments for different screen sizes */
+@media (max-width: 992px) {
   .chat-frame {
-    height: 450px; /* Slightly reduced height */
-    margin-bottom: 20px;
-  }
-  
-  .chat-frame iframe {
-    width: 100% !important;
-    height: 450px !important;
-    max-width: 100% !important;
-  }
-  
-  /* Ensure the chat container doesn't overflow */
-  .chat-container {
-    width: 100%;
-    padding: 0 10px;
-  }
-  
-  /* Make chat section padding smaller on mobile */
-  .chat-section {
-    padding: 15px;
+    padding-bottom: 80%; /* Slightly taller on medium screens */
   }
 }
 
-/* Fix for steps displaying vertically on mobile */
 @media (max-width: 768px) {
-  /* Make steps display horizontally on mobile */
+  .chat-frame {
+    padding-bottom: 100%; /* Taller on mobile screens */
+  }
+  
+  .chat-section {
+    padding: 15px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-frame {
+    padding-bottom: 130%; /* Even taller on very small screens */
+  }
+}
+
+/* Fix for step numbers showing without text */
+@media (max-width: 768px) {
+  /* Horizontal layout with visible text */
   .steps {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
     width: 100%;
-    margin-bottom: 30px;
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
-    padding-bottom: 10px; /* Space for scrollbar */
+    margin: 20px 0 30px;
+    padding: 0 5px;
   }
   
   .step {
-    margin: 0 5px;
-    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33.33%;
+    min-width: 0; /* Allow shrinking */
     max-width: 120px;
+    margin: 0;
   }
   
-  /* Make step text smaller on mobile */
+  .step-number {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
   .step-text {
     font-size: 0.8rem;
-  }
-  
-  /* Alternative layout for very small screens */
-  @media (max-width: 480px) {
-    .steps {
-      justify-content: center;
-    }
-    
-    /* Create a compact horizontal layout */
-    .step {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin: 0 3px;
-      min-width: auto;
-    }
-    
-    .step-number {
-      width: 30px;
-      height: 30px;
-      font-size: 0.9rem;
-      margin-bottom: 0;
-      margin-right: 5px;
-    }
-    
-    .step-text {
-      display: none; /* Hide text on very small screens, show only numbers */
-    }
+    text-align: center;
+    display: block !important; /* Force display */
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    height: auto;
+    line-height: 1.2;
   }
 }
 
-/* Improve TAM/SAM/SOM and Quick-Start cards on mobile */
-@media (max-width: 768px) {
-  .market-cards, .quick-start-cards {
-    gap: 15px;
+/* Extra small screen adjustments */
+@media (max-width: 360px) {
+  .steps {
+    gap: 5px;
   }
   
-  .market-card, .quick-start-card {
-    padding: 15px;
-  }
-  
-  .market-card-header, .quick-start-card-header {
-    margin-bottom: 10px;
-  }
-  
-  .market-card-icon, .quick-start-card-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-  
-  .market-card-title, .quick-start-card-title {
-    font-size: 1.1rem;
-  }
-  
-  .market-card-content p, .quick-start-card-content p {
+  .step-number {
+    width: 30px;
+    height: 30px;
     font-size: 0.9rem;
   }
+  
+  .step-text {
+    font-size: 0.7rem;
+  }
 }
+
+/* Ensure the hero content is properly spaced */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 30px 15px;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+}
+
