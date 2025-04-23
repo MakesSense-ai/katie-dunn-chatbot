@@ -149,7 +149,91 @@ header {
     position: relative;
     z-index: 3;
 }
+/* Quick-Start Guide Section Styles */
+.quick-start {
+    padding: 60px 0;
+    background-color: #f5f5f5;
+}
 
+.quick-start-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quick-start-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.quick-start-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.quick-start-step {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+}
+
+.quick-start-step:hover {
+    transform: translateY(-5px);
+}
+
+.quick-start-step-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+}
+
+.quick-start-step-content {
+    flex-grow: 1;
+}
+
+.quick-start-step-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.quick-start-step-text {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .quick-start-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .quick-start-step {
+        max-width: 100%;
+    }
+}
 .chat-container {
     display: flex;
     flex-direction: column;
